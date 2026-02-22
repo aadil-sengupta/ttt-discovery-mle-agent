@@ -26,8 +26,8 @@ This agent implements the core TTT-Discover algorithm from the paper "Learning t
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/your-username/ttt-discovery-agent.git
-cd ttt-discovery-agent
+git clone https://github.com/aadil-sengupta/ttt-discovery-mle-agent.git
+cd ttt-discovery-mle-agent
 ```
 
 2. Build the Docker image:
@@ -108,10 +108,14 @@ If you use this agent in your research, please cite the TTT-Discover paper:
 }
 ```
 
+## Repository
+
+**GitHub**: https://github.com/aadil-sengupta/ttt-discovery-mle-agent
+
 ## License
 
-[Add your chosen license here]
+MIT License - See [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
-[Add contribution guidelines here]
+Contributions are welcome! Please feel free to submit issues and pull requests.
