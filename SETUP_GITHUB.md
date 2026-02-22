@@ -11,15 +11,17 @@ Follow the prompts to authenticate with your GitHub account.
 ## Step 2: Create GitHub Repository
 
 ```bash
-gh repo create ttt-discovery-agent --public --description "TTT-Discover agent implementation for MLE-Bench"
+gh repo create ttt-discovery-mle-agent --public --description "TTT-Discover agent implementation for MLE-Bench"
 ```
 
 ## Step 3: Push Code to GitHub
 
 ```bash
-git remote add origin https://github.com/your-username/ttt-discovery-agent.git
+git remote add origin https://github.com/aadil-sengupta/ttt-discovery-mle-agent.git
 git push -u origin main
 ```
+
+✅ **Repository Already Created**: The repository is now live at https://github.com/aadil-sengupta/ttt-discovery-mle-agent
 
 ## Step 4: Update MLE-Bench Integration
 
