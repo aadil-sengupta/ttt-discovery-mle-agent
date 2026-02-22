@@ -1,0 +1,53 @@
+vars:
+  time_limit: &time_limit 86400 # 24 hrs
+  max_iterations: &max_iterations 50
+  initial_variants: &initial_variants 5
+  puct_c: &puct_c 1.4
+  per_variant_timeout: &per_variant_timeout 600
+
+defaults: &defaults
+  start: tttdiscovery/start.sh
+  dockerfile: tttdiscovery/Dockerfile
+  kwargs_type: argparse
+  env_vars: &env_vars
+    TIME_LIMIT_SECS: *time_limit
+    MAX_ITERATIONS: *max_iterations
+    PER_VARIANT_TIMEOUT: *per_variant_timeout
+
+tttdiscovery:
+  <<: *defaults
+  kwargs:
+    model: gpt-4o-2024-08-06
+    max-iterations: *max_iterations
+    initial-variants: *initial_variants
+    puct-c: *puct_c
+    per-variant-timeout: *per_variant_timeout
+  env_vars:
+    <<: *env_vars
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+tttdiscovery/dev:
+  <<: *defaults
+  kwargs:
+    model: gpt-4o-2024-08-06
+    max-iterations: 5
+    initial-variants: 2
+    puct-c: *puct_c
+    per-variant-timeout: 300
+  env_vars:
+    <<: *env_vars
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    MAX_ITERATIONS: 5
+    PER_VARIANT_TIMEOUT: 300
+
+tttdiscovery/gpt-4o-mini:
+  <<: *defaults
+  kwargs:
+    model: gpt-4o-mini
+    max-iterations: *max_iterations
+    initial-variants: *initial_variants
+    puct-c: *puct_c
+    per-variant-timeout: *per_variant_timeout
+  env_vars:
+    <<: *env_vars
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
